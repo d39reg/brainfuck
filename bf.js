@@ -20,7 +20,7 @@ function eval_bf(bf)
 		{
 			window.removeEventListener('keydown', fnc);
 			i = position;
-			memory[countOffset] = b[key];
+			memory[countOffset] = key;
 		}
 		while(i < l)
 		{
@@ -38,7 +38,7 @@ function eval_bf(bf)
 				case ',':
 					position = i;
 					i = l;
-					fnc = function(x){run(event.key);}
+					fnc = function(){run(event.keyCode);}
 					window.addEventListener('keydown', fnc);
 				break;
 				case '[':

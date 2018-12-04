@@ -26,6 +26,15 @@ function eval_bf(bf)
 		{
 			switch(bf.charAt(i++))
 			{
+				case '#':
+					var dec = '';
+					do
+					{
+						var s = bf.charAt(i++);
+						dec += s;
+					} while(s >= '0' && s <= '9');
+					memory[countOffset] = dec;
+				break;
 				case '+':
 					memory[countOffset] = (memory[countOffset] + 1) & bit;
 				break;
